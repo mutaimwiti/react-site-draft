@@ -2,19 +2,12 @@ import React, {Component} from 'react';
 import Auth from "../../utils/Auth";
 
 class LoginForm extends Component {
-  handleClick = () => {
-    const {history} = this.props;
-
-    Auth.login(() => {
-      history.push('/country');
-    })
-  };
-
-
   render() {
+    const {onLoginSuccess} = this.props;
+
     return (
       <>
-        <button onClick={() => this.handleClick()}>Login</button>
+        <button onClick={() => Auth.login(onLoginSuccess)}>Login</button>
       </>
     )
   }

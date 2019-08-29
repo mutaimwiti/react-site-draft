@@ -2,13 +2,17 @@ import React, {Component} from 'react';
 import LoginForm from "../../components/LoginForm";
 
 class LoginPage extends Component {
-  render() {
+  handleLoginSuccess = () => {
     const {history} = this.props;
 
+    history.push('/country');
+  };
+
+  render() {
     return (
       <>
         <h2>Login</h2>
-        <LoginForm history={history}/>
+        <LoginForm onLoginSuccess={() => this.handleLoginSuccess()}/>
       </>
     )
   }
