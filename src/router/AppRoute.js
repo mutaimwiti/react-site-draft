@@ -4,12 +4,12 @@ import Auth from "../utils/Auth";
 import routes from './routes';
 
 class AppRoute extends Component {
-  protectedRoutes = routes.filter(route => route.protected).map(route => route.path);
-
   isProtectedRoute = (location) => {
     const {pathname} = location;
 
-    return this.protectedRoutes.indexOf(pathname) > -1;
+    const protectedRoutes = routes.filter(route => route.protected).map(route => route.path);
+
+    return protectedRoutes.indexOf(pathname) > -1;
   };
 
   isLoginRoute = (location) => {
