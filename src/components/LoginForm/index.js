@@ -6,7 +6,7 @@ class LoginForm extends Component {
     const {history} = this.props;
 
     Auth.login(() => {
-      history.push('/state');
+      history.push('/country');
     })
   };
 

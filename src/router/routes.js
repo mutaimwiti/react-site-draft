@@ -9,19 +9,17 @@ const routes = [
     exact: true,
   },
   {
-    path: '/',
-    name: 'StatePage',
+    path: '/country',
+    name: 'CountryPage',
     component: CountryPage,
     exact: true,
     protected: true
   },
   {
-    path: '/state',
-    name: 'StatePage',
+    path: '*',
     component: CountryPage,
-    exact: true,
-    protected: true
-  }
+    protected: true,
+  },
 ];
 
 export default routes;

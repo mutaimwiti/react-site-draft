@@ -4,8 +4,8 @@ class CountryPage extends Component{
   render() {
     return (
       <>
-        <h2>State</h2>
-        State Page
+        <h2>Country</h2>
+        Country Page
       </>
     )
   }
