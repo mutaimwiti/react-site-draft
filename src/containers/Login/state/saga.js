@@ -1,5 +1,5 @@
-import { put, call, takeLatest } from "redux-saga/effects";
-import testAction from "./action";
+import { put, takeLatest } from "redux-saga/effects";
+import { testAction } from "./action";
 import * as types from "./type";
 
 export function* dispatchAction() {
