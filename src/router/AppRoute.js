@@ -4,14 +4,16 @@ import Auth from "../utils/Auth";
 import routes from './routes';
 
 class AppRoute extends Component {
-  isProtectedRoute = (props) => {
+  isProtectedRoute = (location) => {
+    const {pathname} = location;
+
     const protectedRoutes = routes.filter(route => route.protected).map(route => route.path);
 
-    return protectedRoutes.indexOf(props.location.pathname) > -1;
+    return protectedRoutes.indexOf(pathname) > -1;
   };
 
-  isLoginRoute = (props) => {
-    const {location: {pathname}} = props;
+  isLoginRoute = (location) => {
+    const {pathname} = location;
 
     return pathname === '/login';
   };
@@ -23,16 +25,18 @@ class AppRoute extends Component {
       <Route
         {...rest}
         render={(props) => {
+          const {location} = this.props;
+
           if (Auth.isAuthenticated()) {
             // authenticated
-            if (this.isLoginRoute(props)) {
-              return <Redirect to={{pathname: '/country', state: {from: props.location}}}/>
+            if (this.isLoginRoute(location)) {
+              return <Redirect to={{pathname: '/country', state: {from: location}}}/>
             }
             return <ComponentToRender {...props}/>;
           } else {
             //unauthenticated
-            if (this.isProtectedRoute(props)) {
-              return <Redirect to={{pathname: '/login', state: {from: props.location}}}/>
+            if (this.isProtectedRoute(location)) {
+              return <Redirect to={{pathname: '/login', state: {from: location}}}/>
             } else {
               return <ComponentToRender {...props}/>;
             }
