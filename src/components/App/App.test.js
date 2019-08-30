@@ -1,9 +1,9 @@
 import React from 'react';
 import App from '.';
-import {shallow} from '../../utils/enzyme';
+import {mount} from '../../utils/enzyme';
 
 describe('<App/>', () => {
   it('should render without crashing', () => {
-    expect(() => shallow(<App/>)).not.toThrow();
+    expect(() => mount(<App/>)).not.toThrow();
   });
 });
