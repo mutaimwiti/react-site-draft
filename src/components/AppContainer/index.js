@@ -3,7 +3,12 @@ import Auth from "../../utils/Auth";
 import {withRouter} from 'react-router';
 
 export class AppContainer extends Component {
-  handleClick = () => {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick () {
     const {history} = this.props;
 
     Auth.logout(() => {
