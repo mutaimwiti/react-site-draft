@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Route, Redirect} from 'react-router-dom';
-import Auth from "../utils/Auth";
+import Auth from "../utils/app/Auth";
 import routes from './routes';
 
 class AppRoute extends Component {

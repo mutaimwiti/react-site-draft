@@ -1,16 +1,14 @@
 import React from 'react';
 import {AppContainer} from '.';
 
-import {mount} from '../../utils/enzyme';
+import {mount} from '../../utils/test/enzyme';
+import {login} from "../../utils/test/auth";
+import {history} from "../../utils/test/props";
 
 describe('<AppContainer/>', () => {
   let wrapper, authedWrapper;
 
-  const props = {
-    history: {
-      push: jest.fn()
-    }
-  };
+  const props = {history};
 
   beforeEach(() => {
     wrapper = mount(
@@ -19,7 +17,7 @@ describe('<AppContainer/>', () => {
       </AppContainer>
     );
 
-    localStorage.setItem('auth', JSON.stringify(true));
+    login();
 
     authedWrapper = mount(<AppContainer {...props}/>);
   });
