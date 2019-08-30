@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Switch} from "react-router-dom";
 import './App.css';
-import {routes, AppRoute} from "../../router";
+import {routes, AppRoute} from "../../routes";
 import AppContainer from "../AppContainer";
 
 function App(props) {

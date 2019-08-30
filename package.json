@@ -42,6 +42,8 @@
     "collectCoverageFrom": [
       "src/**/*.js",
       "!src/d3/**",
+      "!src/store/**",
+      "!src/routes/**",
       "!src/index.js",
       "!src/serviceWorker.js"
     ]
