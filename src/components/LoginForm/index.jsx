@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {auth} from '../../utils/app/auth';
+import React, { Component } from 'react';
+import { auth } from '../../utils/app/auth';
 
 class LoginForm extends Component {
   state = {
@@ -9,7 +9,7 @@ class LoginForm extends Component {
 
   handleLogin = (success, data) => {
     if (success) {
-      const {onLoginSuccess} = this.props;
+      const { onLoginSuccess } = this.props;
       // handle success - toast success msg - update ui accordingly
       onLoginSuccess(data);
     } else {
@@ -19,10 +19,10 @@ class LoginForm extends Component {
   };
 
   render() {
-    const {username, password} = this.state;
+    const { username, password } = this.state;
 
     // credentials from login form
-    const credentials = {username, password};
+    const credentials = { username, password };
 
     return (
       <>
@@ -30,7 +30,7 @@ class LoginForm extends Component {
           Login
         </button>
       </>
-    )
+    );
   }
 }
 

@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
-import LoginForm from "../../components/LoginForm";
+import React, { Component } from 'react';
+import LoginForm from '../../components/LoginForm';
 
 class LoginPage extends Component {
   handleLoginSuccess = () => {
-    const {history} = this.props;
+    const { history } = this.props;
 
     history.push('/country');
   };
@@ -12,9 +12,9 @@ class LoginPage extends Component {
     return (
       <>
         <h2>Login</h2>
-        <LoginForm onLoginSuccess={this.handleLoginSuccess}/>
+        <LoginForm onLoginSuccess={this.handleLoginSuccess} />
       </>
-    )
+    );
   }
 }
 

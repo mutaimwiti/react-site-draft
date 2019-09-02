@@ -4,9 +4,7 @@ import * as types from './type';
 
 export function* dispatchAction() {
   yield put(types.TEST_THIS_ACTION);
-  console.log('action is being dispatched');
-
-  // call
+  // console.log('action is being dispatched');
 }
 
 export function* dispatchWatcher() {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
-import {auth} from '../../utils/app/auth';
+import { auth } from '../../utils/app/auth';
 
 export class AppContainer extends Component {
   constructor(props) {
