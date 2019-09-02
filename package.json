@@ -22,7 +22,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "coverage": "yarn test --coverage --watchAll=false",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "clean": "rimraf coverage build"
   },
   "eslintConfig": {
     "extends": "react-app"
