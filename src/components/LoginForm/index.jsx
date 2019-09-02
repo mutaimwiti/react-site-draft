@@ -14,7 +14,7 @@ class LoginForm extends Component {
       onLoginSuccess(data);
     } else {
       // handle error - toast error msg - display errors - update ui accordingly
-      console.log(data);
+      // console.log(data);
     }
   };
 
