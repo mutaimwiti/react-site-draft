@@ -5,13 +5,17 @@ export const protectedRoutes = routes
   .map((route) => route.path);
 
 export const isProtectedRoute = (location) => {
-  const { pathname } = location;
+  const {pathname} = location;
 
   return protectedRoutes.indexOf(pathname) > -1;
 };
 
 export const isLoginRoute = (location) => {
-  const { pathname } = location;
+  const {pathname} = location;
 
   return pathname === '/login';
+};
+
+export const isRootRoute = (location) => {
+  return location.pathname === '/';
 };
