@@ -1,6 +1,5 @@
 import React from 'react';
 import LoginForm from '.';
-import { mount} from '../../utils/test/enzyme';
 
 describe('<LoginForm/>', () => {
   const props = {

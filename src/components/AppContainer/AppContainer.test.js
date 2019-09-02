@@ -1,7 +1,6 @@
 import React from 'react';
 import {AppContainer} from '.';
 
-import {mount} from '../../utils/test/enzyme';
 import {login} from "../../utils/test/auth";
 import {history} from "../../utils/test/props";
 
