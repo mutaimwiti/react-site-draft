@@ -1,5 +1,5 @@
-import {all, fork} from "redux-saga/effects";
-import {dispatchWatcher} from "../containers/Login/state/saga";
+import { all, fork } from 'redux-saga/effects';
+import { dispatchWatcher } from '../containers/Login/state/saga';
 
 // fork all the watchers
 

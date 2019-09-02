@@ -1,3 +1,3 @@
-export const history =  {
-  push: jest.fn()
+export const history = {
+  push: jest.fn(),
 };

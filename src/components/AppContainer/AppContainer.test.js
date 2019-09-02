@@ -1,28 +1,29 @@
 import React from 'react';
-import {AppContainer} from '.';
+import { AppContainer } from '.';
 
-import {login} from "../../utils/test/auth";
-import {history} from "../../utils/test/props";
+import { login } from '../../utils/test/auth';
+import { history } from '../../utils/test/props';
 
 describe('<AppContainer/>', () => {
-  let wrapper, authedWrapper;
+  let wrapper;
+  let authedWrapper;
 
-  const props = {history};
+  const props = { history };
 
   beforeEach(() => {
     wrapper = mount(
       <AppContainer {...props}>
         <div>This is a child</div>
-      </AppContainer>
+      </AppContainer>,
     );
 
     login();
 
-    authedWrapper = mount(<AppContainer {...props}/>);
+    authedWrapper = mount(<AppContainer {...props} />);
   });
 
   it('should render without crashing', () => {
-    expect(() => mount(<AppContainer/>)).not.toThrow();
+    expect(() => mount(<AppContainer />)).not.toThrow();
   });
 
   it('should render header and footer when authenticated', () => {

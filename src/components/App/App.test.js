@@ -3,6 +3,6 @@ import App from '.';
 
 describe('<App/>', () => {
   it('should render without crashing', () => {
-    expect(() => mount(<App/>)).not.toThrow();
+    expect(() => mount(<App />)).not.toThrow();
   });
 });

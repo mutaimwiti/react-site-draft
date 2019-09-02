@@ -1,6 +1,6 @@
 import axios from 'axios';
 import toastr from 'toastr';
-import {authHeader} from "./Auth";
+import { authHeader } from './Auth';
 
 const http = axios.create({
   baseURL: process.env.REACT_APP_SERVER_URL,
@@ -42,7 +42,7 @@ http.interceptors.response.use(
       err = {
         response: {
           status: 'NETWORK_ERR',
-          data: {message: 'Please check your network and try again.'},
+          data: { message: 'Please check your network and try again.' },
         },
       };
     }

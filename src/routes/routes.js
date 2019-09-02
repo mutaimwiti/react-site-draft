@@ -13,7 +13,7 @@ const routes = [
     name: 'CountryPage',
     component: CountryPage,
     exact: true,
-    protected: true
+    protected: true,
   },
   {
     path: '*',

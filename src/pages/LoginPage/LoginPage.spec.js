@@ -1,5 +1,3 @@
 describe('<LoginPage/>', () => {
-  it('should render without crashing', () => {
-
-  });
+  it('should render without crashing', () => {});
 });

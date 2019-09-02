@@ -1,7 +1,7 @@
 import React from 'react';
 import Adapter from 'enzyme-adapter-react-16';
-import {BrowserRouter} from "react-router-dom";
-import {mount, shallow, render, configure} from 'enzyme';
+import { BrowserRouter } from 'react-router-dom';
+import { mount, shallow, render, configure } from 'enzyme';
 
 configure({ adapter: new Adapter() });
 

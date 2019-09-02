@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import Auth from "../../utils/app/auth";
-import {withRouter} from 'react-router';
+import React, { Component } from 'react';
+import { withRouter } from 'react-router';
+import Auth from '../../utils/app/auth';
 
 export class AppContainer extends Component {
   constructor(props) {
@@ -8,14 +8,14 @@ export class AppContainer extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick () {
-    const {history} = this.props;
+  handleClick() {
+    const { history } = this.props;
     Auth.logout();
     history.push('/login');
-  };
+  }
 
   render() {
-    const {children} = this.props;
+    const { children } = this.props;
 
     if (Auth.isAuthenticated()) {
       return (
@@ -27,10 +27,9 @@ export class AppContainer extends Component {
 
           <h1>Footer</h1>
         </>
-      )
-    } else {
-      return <>{children}</>
+      );
     }
+    return <>{children}</>;
   }
 }
 
