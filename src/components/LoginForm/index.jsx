@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import Auth from "../../utils/app/auth";
+import {auth} from '../../utils/app/auth';
 
 class LoginForm extends Component {
   state = {
     username: 'admin',
-    password: 'password',
+    password: 'admin',
   };
 
   handleLogin = (success, data) => {
@@ -26,7 +26,7 @@ class LoginForm extends Component {
 
     return (
       <>
-        <button onClick={() => Auth.login(credentials, this.handleLogin)}>
+        <button onClick={() => auth.login(credentials, this.handleLogin)}>
           Login
         </button>
       </>

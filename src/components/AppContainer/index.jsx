@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
-import Auth from '../../utils/app/auth';
+import {auth} from '../../utils/app/auth';
 
 export class AppContainer extends Component {
   constructor(props) {
@@ -10,14 +10,14 @@ export class AppContainer extends Component {
 
   handleClick() {
     const { history } = this.props;
-    Auth.logout();
+    auth.logout();
     history.push('/login');
   }
 
   render() {
     const { children } = this.props;
 
-    if (Auth.isAuthenticated()) {
+    if (auth.isAuthenticated()) {
       return (
         <>
           <h1>Header</h1>

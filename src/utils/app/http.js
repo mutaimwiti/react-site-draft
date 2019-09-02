@@ -1,6 +1,6 @@
 import axios from 'axios';
 import toastr from 'toastr';
-import { authHeader } from './Auth';
+import { authHeader } from './auth';
 
 const http = axios.create({
   baseURL: process.env.REACT_APP_SERVER_URL,

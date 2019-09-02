@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Route, Redirect} from 'react-router-dom';
-import Auth from "../utils/app/auth";
+import {auth} from '../utils/app/auth';
 import routes from './routes';
 
 class AppRoute extends Component {
@@ -27,7 +27,7 @@ class AppRoute extends Component {
         render={(props) => {
           const {location} = this.props;
 
-          if (Auth.isAuthenticated()) {
+          if (auth.isAuthenticated()) {
             // authenticated
             if (this.isLoginRoute(location)) {
               return <Redirect to={{pathname: '/country', state: {from: location}}}/>

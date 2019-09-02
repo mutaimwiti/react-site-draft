@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-class Auth {
-  login(credentials, cb) {
+const auth = {
+  login: (credentials, cb) => {
     axios
       .post(`${process.env.REACT_APP_SERVER_URL}/auth/login`, credentials)
       .then((resp) => {
@@ -14,21 +14,21 @@ class Auth {
       .catch((err) => {
         cb(false, err);
       });
-  }
+  },
 
-  logout() {
+  logout: () => {
     localStorage.removeItem('auth');
-  }
+  },
 
-  isAuthenticated() {
+  isAuthenticated: () => {
     return !!localStorage.getItem('auth');
-  }
-}
+  },
+};
 
-export const authHeader = () => {
+const authHeader = () => {
   const auth = localStorage.getItem('auth');
 
   return auth ? { Authorization: `Bearer ${auth}` } : {};
 };
 
-export default new Auth();
+export { auth, authHeader };
