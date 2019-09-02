@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Auth from "../../utils/app/Auth";
+import Auth from "../../utils/app/auth";
 
 class LoginForm extends Component {
   state = {
