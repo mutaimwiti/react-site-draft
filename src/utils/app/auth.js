@@ -26,9 +26,9 @@ const auth = {
 };
 
 const authHeader = () => {
-  const auth = localStorage.getItem('auth');
+  const token = localStorage.getItem('auth');
 
-  return auth ? { Authorization: `Bearer ${auth}` } : {};
+  return token ? { Authorization: `Bearer ${token}` } : {};
 };
 
 export { auth, authHeader };
