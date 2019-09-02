@@ -10,10 +10,8 @@ export class AppContainer extends Component {
 
   handleClick () {
     const {history} = this.props;
-
-    Auth.logout(() => {
-      history.push('/login');
-    })
+    Auth.logout();
+    history.push('/login');
   };
 
   render() {

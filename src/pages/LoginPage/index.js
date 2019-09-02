@@ -12,7 +12,7 @@ class LoginPage extends Component {
     return (
       <>
         <h2>Login</h2>
-        <LoginForm onLoginSuccess={() => this.handleLoginSuccess()}/>
+        <LoginForm onLoginSuccess={this.handleLoginSuccess}/>
       </>
     )
   }
