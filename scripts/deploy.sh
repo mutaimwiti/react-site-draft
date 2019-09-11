@@ -9,4 +9,8 @@ else
 fi
 
 #scp .env $DEPLOY_USER@$SERVER_IP:/home/$DEPLOY_USER/$DEPLOY_FOLDER/.env
+#echo "$DEPLOY_USER$SERVER_IP"
+#ssh -v $DEPLOY_USER@$SERVER_IP "./deploy.sh"
+
+scp .env $DEPLOY_USER@$SERVER_IP:/home/$DEPLOY_USER/$DEPLOY_FOLDER/.env
 ssh $DEPLOY_USER@$SERVER_IP "./deploy.sh"
