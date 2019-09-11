@@ -41,9 +41,11 @@ jobs:
           name: Deploy Master to Heroku
           command: |
             if [ "$CIRCLE_BRANCH" == master ]; then
-              echo 'Master'
+              echo "REACT_APP_SERVER_URL"=$(echo $PROD_REACT_APP_SERVER_URL) >> .env
+              scp .env $DEPLOY_USER@$STAG_IP:/home/$DEPLOY_USER/$STAGING_DEPLOY_FOLDER/.env
+              ssh $DEPLOY_USER@$STAG_IP "./deploy.sh"
             else
-              echo 'Develop'
+             echo "REACT_APP_SERVER_URL"=$(echo $STAG_REACT_APP_SERVER_URL) >> .env
             fi
 
 workflows:
